@@ -1,0 +1,125 @@
+
+(rules PCB STM32F745VE_REV1
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 1452)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule +3.3V
+      (active off)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule GND
+      (active off)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 177.8)
+    (clear 178.0)
+    (clear 88.9 (type smd_to_turn_gap))
+    (clear 44.6 (type smd_smd))
+  )
+  (padstack "Via[0-3]_812.8:406.4_um"
+    (shape
+      (circle F.Cu 812.8 0.0 0.0)
+    )
+    (shape
+      (circle +3.3V 812.8 0.0 0.0)
+    )
+    (shape
+      (circle GND 812.8 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 812.8 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-3]_812.8:406.4_um" "Via[0-3]_812.8:406.4_um" default
+  )
+  (via 
+    "Via[0-3]_812.8:406.4_um-kicad_default" "Via[0-3]_812.8:406.4_um" "kicad_default"
+  )
+  (via 
+    "Via[0-3]_812.8:406.4_um-POWER" "Via[0-3]_812.8:406.4_um" POWER
+  )
+  (via_rule
+    default "Via[0-3]_812.8:406.4_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-3]_812.8:406.4_um-kicad_default"
+  )
+  (via_rule
+    POWER "Via[0-3]_812.8:406.4_um-POWER"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 177.8)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    /OSC32IN /OSC32OUT /OSCHSIN /OSCHSOUT "/USB_HS_DM" "/USB_HS_DP" "Net-(D1-Pad4)" "Net-(D1-Pad6)"
+    "/USB_FS_DM" "/USB_FS_DP" "Net-(D2-Pad4)" "Net-(D2-Pad6)" "/SDMMC_D1" "/SDMMC_D0" "/SDMMC_CK" "/SDMMC_CMD"
+    "/SDMMC_D3" "/SDMMC_D2" "/JTAG_SWDIO" "/JTAG_SWCLK" "/GPIO_11" "/GPIO_12" "/GPIO_13" "/TIM9_CH1"
+    "/SPI4_MOSI" "/ADC_10" "/SPI2_MISO" "/SPI2_MOSI" "/ADC_0" "/ADC_3" "/DAC_1" "/DAC_0"
+    "/ADC_6" "/ADC_8" "/ADC_9" "/GPIO_20" "/GPIO_14" "/GPIO_15" "/TIM1_CH1" "/GPIO_16"
+    "/TIM1_CH2" "/GPIO_17" "/SPI4_MISO" "/GPIO_18" "/GPIO_19" "/SPI2_SCK" "/GPIO_9" "/GPIO_10"
+    "/I2C1_SCL" "/I2C1_SDA" "/CAN2_TX" "/TIM4_CH2" "/GPIO_21" "/CAN2_RX" "/GPIO_2" "/TIM2_CH2"
+    "/USART2_TX" "/USART2_RX" "/GPIO_0" "/GPIO_1" "/CAN1_RX" "/CAN1_TX" "/USART1_RX" "/TIM2_CH1"
+    /MCLKOUT "/USART1_TX" "/TIM3_CH1" "/TIM3_CH2" "/GPIO_7" "/GPIO_8" "/I2C4_SCL" "/I2C4_SDA"
+    "/GPIO_5" "/GPIO_6" "/GPIO_3" "/GPIO_4" "/ETH_MDC" "/ETH_REF_CLK" "/ETH_MDIO" "/ETH_CRS_DV"
+    "/ETH_RXD0" "/ETH_RXD1" "/ETH_TXD0" "/ETH_TXD1" "Net-(J1-Pad9)" "Net-(J1-Pad11)" "/ETH_RXM" "/ETH_RXP"
+    "/ETH_TXM" "/ETH_TXP" "/ETH_TXC" "Net-(C6-Pad1)" "/ETH_RXC" "Net-(F1-Pad2)" "/ETH_INT" "Net-(R1-Pad2)"
+    "/ETH_LED" "/MCU_RST" "Net-(C25-Pad1)" "Net-(J3-Pad1)" "Net-(J4-Pad1)" "/SPI4_SCK" "Net-(J1-Pad7)" "Net-(J3-Pad4)"
+    "Net-(J4-Pad4)" "Net-(P2-Pad27)" "Net-(P2-Pad30)" /BOOT0 "/ETH_TX_EN" "Net-(U2-Pad7)" "Net-(U2-Pad17)" "/ETH_TXEN"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 177.8)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class POWER
+    +3.3V GND /VBATT /+3.3VANA /VCAP1 /VCAP2 /+3.3VETH /+3.3VEXT
+    /+3.0VREF
+    (clearance_class POWER)
+    (via_rule POWER)
+    (rule
+      (width 254.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
